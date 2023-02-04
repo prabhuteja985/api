@@ -22,7 +22,7 @@ const postRoute = require('./routes/posts');
 app.use('/post',postRoute);
 
 const corsOptions ={
-    origin:'*', 
+    origin:'https://apiss.onrender.com/post', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
