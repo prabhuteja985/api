@@ -5,6 +5,8 @@ const express = require('express'); // Importing express module
 const app = express(); // Creating an express object
   
 const port = 8000;  // Setting an port for this application
+var cors = require('cors')
+
 const mongoose=require('mongoose');
 require("dotenv/config");
 const bodyParser = require("body-parser");
@@ -19,7 +21,13 @@ mongoose.connect(process.env.DB_CONNECTION,()=>{
 const postRoute = require('./routes/posts');
 app.use('/post',postRoute);
 
-  
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(corsOptions());
+
   
 // Starting server using listen function
 app.listen(port, function (err) {
