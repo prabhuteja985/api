@@ -26,7 +26,7 @@ const corsOptions ={
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
-app.use(corsOptions());
+app.use(cors(corsOptions));
 
   
 // Starting server using listen function
